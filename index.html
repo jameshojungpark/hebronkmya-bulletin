@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>헤브론 청년부 주보 — May 3, 2026</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --cream: #FAF7F2;
+      --warm-white: #FFFDF9;
+      --gold: #C9A96E;
+      --gold-light: #E8D5B0;
+      --deep: #1C2B3A;
+      --mid: #2E4A62;
+      --accent: #4A7FA5;
+      --accent-light: #C5DCF0;
+      --charcoal: #1A1A1A;
+      --gray: #888;
+      --light-gray: #E8E2D9;
+    }
+
+    body {
+      background: var(--cream);
+      font-family: 'Noto Sans KR', sans-serif;
+      color: var(--charcoal);
+      min-height: 100vh;
+    }
+
+    .hero {
+      background: linear-gradient(160deg, #1C2B3A 0%, #0E1C2A 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 15% 50%, rgba(74, 127, 165, 0.2) 0%, transparent 60%), radial-gradient(ellipse 50% 70% at 85% 30%, rgba(201, 169, 110, 0.12) 0%, transparent 60%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 2.5rem;
+      padding: 3rem 4rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .hero-main {
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: #fff;
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-subtitle {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.5);
+      font-weight: 300;
+      letter-spacing: 0.1em;
+    }
+
+    .hero-info {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .info-chip {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .info-chip .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .theme-bar {
+      background: var(--accent);
+      padding: 0.7rem 4rem;
+      text-align: center;
+    }
+
+    .theme-bar p {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 0.83rem;
+      color: rgba(255, 255, 255, 0.9);
+      letter-spacing: 0.04em;
+    }
+
+    .theme-bar strong {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .main-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 310px;
+      gap: 2.5rem;
+    }
+
+    .card {
+      background: var(--warm-white);
+      border: 1px solid var(--light-gray);
+      border-radius: 3px;
+      margin-bottom: 1.8rem;
+      overflow: hidden;
+      animation: fadeUp 0.55s ease both;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card:nth-child(1) {
+      animation-delay: 0.05s;
+    }
+
+    .card:nth-child(2) {
+      animation-delay: 0.15s;
+    }
+
+    .card:nth-child(3) {
+      animation-delay: 0.25s;
+    }
+
+    .card:nth-child(4) {
+      animation-delay: 0.35s;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--light-gray);
+      background: var(--cream);
+    }
+
+    .card-icon {
+      width: 26px;
+      height: 26px;
+      background: var(--deep);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .card-icon svg {
+      width: 13px;
+      height: 13px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .card-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--deep);
+      letter-spacing: 0.12em;
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    .worship-list {
+      list-style: none;
+    }
+
+    .worship-item {
+      display: grid;
+      grid-template-columns: 24px 1fr auto;
+      align-items: start;
+      gap: 0.75rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px dashed var(--light-gray);
+    }
+
+    .worship-item:last-child {
+      border-bottom: none;
+    }
+
+    .worship-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.72rem;
+      color: var(--gold);
+      font-weight: 700;
+      text-align: center;
+      padding-top: 0.15rem;
+    }
+
+    .worship-label {
+      font-size: 0.88rem;
+      color: var(--charcoal);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .worship-sub {
+      font-size: 0.72rem;
+      color: var(--gray);
+      font-family: 'Noto Serif KR', serif;
+      font-style: italic;
+      margin-top: 0.15rem;
+      line-height: 1.6;
+    }
+
+    .worship-detail {
+      font-size: 0.75rem;
+      color: var(--gray);
+      text-align: right;
+      flex-shrink: 0;
+      padding-top: 0.15rem;
+    }
+
+    .worship-item.hl .worship-label {
+      color: var(--deep);
+      font-weight: 700;
+      font-family: 'Noto Serif KR', serif;
+      font-size: 0.92rem;
+    }
+
+    .ann {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--light-gray);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.9rem;
+      align-items: start;
+    }
+
+    .ann:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .ann-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--light-gray);
+      font-weight: 700;
+      line-height: 1;
+      min-width: 1.4rem;
+      text-align: center;
+    }
+
+    .ann-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--deep);
+      margin-bottom: 0.3rem;
+    }
+
+    .ann-body {
+      font-size: 0.82rem;
+      color: #555;
+      line-height: 1.75;
+    }
+
+    .ann-sub {
+      font-size: 0.78rem;
+      color: #666;
+      margin-top: 0.4rem;
+      padding-left: 0.8rem;
+      border-left: 2px solid var(--light-gray);
+      line-height: 1.75;
+    }
+
+    .qt-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.4rem;
+      margin-top: 0.75rem;
+    }
+
+    .qt-day {
+      background: var(--cream);
+      border: 1px solid var(--light-gray);
+      border-radius: 3px;
+      padding: 0.5rem 0.3rem;
+      text-align: center;
+    }
+
+    .qt-date {
+      font-size: 0.64rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+      letter-spacing: 0.03em;
+    }
+
+    .qt-ref {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 0.7rem;
+      color: #444;
+      line-height: 1.3;
+    }
+
+    /* 이벤트 하이라이트 박스 */
+    .highlight-box {
+      background: rgba(74, 127, 165, 0.08);
+      border: 1px solid rgba(74, 127, 165, 0.25);
+      border-radius: 3px;
+      padding: 0.75rem 1rem;
+      margin-top: 0.5rem;
+      font-size: 0.79rem;
+      color: #444;
+      line-height: 1.75;
+    }
+
+    .highlight-box strong {
+      color: var(--accent);
+    }
+
+    .offering-types {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .ot-item {
+      background: var(--warm-white);
+      border: 1px solid var(--light-gray);
+      border-radius: 2px;
+      padding: 0.5rem 0.6rem;
+      font-size: 0.74rem;
+      color: #444;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .ot-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.85rem;
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .offering-email {
+      background: var(--deep);
+      color: var(--gold-light);
+      padding: 0.65rem 0.85rem;
+      border-radius: 2px;
+      font-size: 0.73rem;
+      line-height: 1.65;
+    }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: 1.5rem 3rem 1fr;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--light-gray);
+      font-size: 0.82rem;
+    }
+
+    .contact-row:last-child {
+      border-bottom: none;
+    }
+
+    .contact-icon {
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    .contact-label {
+      color: var(--gray);
+      font-size: 0.72rem;
+    }
+
+    .contact-val {
+      color: #333;
+      font-weight: 500;
+    }
+
+    .contact-val a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .sidebar .card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    footer {
+      background: var(--deep);
+      color: rgba(255, 255, 255, 0.4);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      line-height: 2;
+    }
+
+    footer strong {
+      color: var(--gold-light);
+      font-family: 'Noto Serif KR', serif;
+      font-size: 0.95rem;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    @media (max-width: 700px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 2rem 1.5rem;
+        gap: 1rem;
+      }
+
+      .hero-info {
+        align-items: center;
+      }
+
+      .info-chip {
+        justify-content: center;
+      }
+
+      .theme-bar {
+        padding: 0.7rem 1.5rem;
+      }
+
+      .main-wrapper {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 1rem 4rem;
+      }
+
+      .qt-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-main">
+        <div class="hero-eyebrow">Hebron KM Young Adults · 주보</div>
+        <div class="hero-title">헤브론 청년부</div>
+        <div class="hero-subtitle">May 3rd, 2026 &nbsp;·&nbsp; Sunday</div>
+      </div>
+      <div class="hero-info">
+        <div class="info-chip"><span class="dot"></span> 예배 1:30 PM</div>
+        <div class="info-chip"><span class="dot"></span> KM 청년부실</div>
+        <div class="info-chip"><span class="dot"></span> 이의정 목사</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="theme-bar">
+    <p>2026 청년부 주제 — <strong>"복음의 대상자인 세상을 알자"</strong></p>
+  </div>
+
+  <div class="main-wrapper">
+    <main>
+
+      <!-- 예배 순서 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon"><svg viewBox="0 0 24 24">
+              <polyline points="9 11 12 14 22 4" />
+              <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
+            </svg></div>
+          <div class="card-title">예배 순서</div>
+        </div>
+        <div class="card-body">
+          <ul class="worship-list">
+            <li class="worship-item">
+              <span class="worship-num">01</span>
+              <div>
+                <div class="worship-label">사도신경</div>
+              </div>
+              <span class="worship-detail">다같이</span>
+            </li>
+            <li class="worship-item">
+              <span class="worship-num">02</span>
+              <div>
+                <div class="worship-label">찬양 및 경배</div>
+                <div class="worship-sub">우리가 주를 더욱 사랑하고<br>주님의 마음이 있는 곳<br>작고 약한 내 모습<br>함께 지어져 가네</div>
+              </div>
+              <span class="worship-detail">Atom Worship</span>
+            </li>
+            <li class="worship-item">
+              <span class="worship-num">03</span>
+              <div>
+                <div class="worship-label">대표 기도</div>
+              </div>
+              <span class="worship-detail">최영지 자매</span>
+            </li>
+            <li class="worship-item hl">
+              <span class="worship-num">04</span>
+              <div>
+                <div class="worship-label">설교 — 세 번째 기적</div>
+                <div class="worship-sub">누가복음 17장 11절 – 19절</div>
+              </div>
+              <span class="worship-detail">이의정 목사</span>
+            </li>
+            <li class="worship-item">
+              <span class="worship-num">05</span>
+              <div>
+                <div class="worship-label">찬양</div>
+                <div class="worship-sub">오늘, 이 하루도</div>
+              </div>
+              <span class="worship-detail"></span>
+            </li>
+            <li class="worship-item">
+              <span class="worship-num">06</span>
+              <div>
+                <div class="worship-label">축도</div>
+              </div>
+              <span class="worship-detail">이의정 목사</span>
+            </li>
+            <li class="worship-item">
+              <span class="worship-num">07</span>
+              <div>
+                <div class="worship-label">광고</div>
+              </div>
+              <span class="worship-detail">임원</span>
+            </li>
+          </ul>
+          <p style="font-size:0.75rem; color:var(--gray); margin-top:0.75rem; font-style:italic; text-align:center;">
+            * 헌금은 예배 전에 드리시면 됩니다. (따로 헌금 시간은 없습니다)
+          </p>
+          <div
+            style="margin-top:1.2rem; background:var(--cream); border:1px solid var(--light-gray); border-radius:3px; padding:1rem 1.2rem;">
+            <div
+              style="font-size:0.78rem; font-weight:700; color:var(--deep); margin-bottom:0.6rem; letter-spacing:0.06em;">
+              ✦ 주일 헌금 안내</div>
+            <div class="offering-types">
+              <div class="ot-item"><span class="ot-num">1</span><span>주일헌금 및<br>기타헌금</span></div>
+              <div class="ot-item"><span class="ot-num">2</span>십일조</div>
+              <div class="ot-item"><span class="ot-num">3</span>감사헌금</div>
+              <div class="ot-item"><span class="ot-num">4</span>절기헌금</div>
+            </div>
+            <div class="offering-email">
+              📧 이메일 헌금 방법
+              <div style="font-size:0.69rem; color:rgba(255,255,255,0.55); margin-top:0.25rem;">Message: #. 영문이름. KMC
+                &nbsp;(예: 2. First Last. KMC)</div>
+              <div
+                style="display:flex; align-items:center; justify-content:space-between; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:4px; padding:0.4rem 0.6rem; margin-top:0.3rem;">
+                <code style="color:#fff; font-size:0.78rem; user-select:all;">hebronchurch2020@gmail.com</code>
+                <button
+                  onclick="navigator.clipboard.writeText('hebronchurch2020@gmail.com'); this.innerHTML='✓'; this.style.background='#5C8A60'; setTimeout(()=>{ this.innerHTML='복사'; this.style.background='rgba(255,255,255,0.12)'; }, 2000);"
+                  style="background:rgba(255,255,255,0.12); color:rgba(255,255,255,0.8); border:none; border-radius:3px; padding:0.25rem 0.6rem; font-size:0.7rem; cursor:pointer; flex-shrink:0; margin-left:0.6rem; font-family:'Noto Sans KR',sans-serif;">복사</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 청년부 소식 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon"><svg viewBox="0 0 24 24">
+              <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" />
+            </svg></div>
+          <div class="card-title">청년부 소식</div>
+        </div>
+        <div class="card-body">
+
+          <div class="ann">
+            <div class="ann-num">1</div>
+            <div>
+              <div class="ann-title">환영합니다 👋</div>
+              <div class="ann-body">
+                KM 청년부 예배에 오신 여러분을 환영합니다.<br>
+                · 말씀을 전해주신 <strong>이의정 목사님</strong>께 감사드립니다.<br>
+                · 예배 후 <strong>5월 생일자 (장민정)</strong> 축하 시간이 있습니다. 🎂<br>
+                <span style="font-size:0.78rem; color:var(--gray);">&nbsp;&nbsp;피자+음료를 준비해주신 이홍주 집사님께 감사드립니다.</span><br>
+                · 예배 후 <strong>목장 모임</strong>이 있습니다.
+              </div>
+            </div>
+          </div>
+
+          <div class="ann">
+            <div class="ann-num">2</div>
+            <div>
+              <div class="ann-title">목장별 독서 모임</div>
+              <div class="ann-body">목장별 첫 번째 독서 모임이 진행되었습니다. 두 번째 모임에도 적극적으로 참여해주시고 세상을 이해하고 알아가는 시간이 되길 바랍니다.</div>
+            </div>
+          </div>
+
+          <div class="ann">
+            <div class="ann-num">3</div>
+            <div>
+              <div class="ann-title">🎁 "같이 묵상 하자" 이벤트</div>
+              <div class="ann-body">이번 한 주간, 목장별로 요일에 상관 없이 <strong>금요일 밤 12시까지</strong>, 은혜 받은 구절과 묵상 글(짧더라도 느낌이나 깨달음
+                포함)을 올리는 목장에 특별한 선물을 드립니다!</div>
+              <div class="highlight-box">
+                <strong>* 타지역으로 출타하지 않은 목원</strong>이 대상입니다<br>
+                청년부 카톡방에 공유해 주세요 📲
+              </div>
+              <div class="qt-grid">
+                <div class="qt-day">
+                  <div class="qt-date">5/4 월</div>
+                  <div class="qt-ref">시편 71편</div>
+                </div>
+                <div class="qt-day">
+                  <div class="qt-date">5/5 화</div>
+                  <div class="qt-ref">시편 72편</div>
+                </div>
+                <div class="qt-day">
+                  <div class="qt-date">5/6 수</div>
+                  <div class="qt-ref">시편 73편</div>
+                </div>
+                <div class="qt-day">
+                  <div class="qt-date">5/7 목</div>
+                  <div class="qt-ref">시편 74편</div>
+                </div>
+                <div class="qt-day">
+                  <div class="qt-date">5/8 금</div>
+                  <div class="qt-ref">시편 75편</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ann">
+            <div class="ann-num">4</div>
+            <div>
+              <div class="ann-title">식탁 교제 속에 흘러가는 복음 🍽️</div>
+              <div class="ann-body">평소에 예수님을 소개하고 싶은 대상과 함께 식사하는 만남입니다.</div>
+              <div class="ann-sub">
+                · 1대 1 또는 목장, 지인들과 함께 만나도 됩니다<br>
+                · 식사하는 모든 사람에게 <strong>1인당 $30</strong> 지원<br>
+                · 마음에 떠오르는 사람이 있다면 신성은 목사님에게 알려주세요
+              </div>
+            </div>
+          </div>
+
+          <div class="ann">
+            <div class="ann-num">5</div>
+            <div>
+              <div class="ann-title">마더스 데이 안내 💐</div>
+              <div class="ann-body">마더스 데이 주일(5/10) 예배 전, 어머니 성도님들께 꽃송이를 전달할 청년 봉사자를 모집합니다. 목자에게 알려주세요.</div>
+              <div class="ann-sub">
+                · <strong>꽃송이 포장</strong>: 5/9(토) 오후 2시 (EM 청년들도 함께)<br>
+                · <strong>1부 봉사 1명</strong>: 5/10(주일) 오전 8:30~<br>
+                · <strong>2부 봉사 2명</strong>: 5/10(주일) 오전 10:30~
+              </div>
+            </div>
+          </div>
+
+          <div class="ann">
+            <div class="ann-num">6</div>
+            <div>
+              <div class="ann-title">모임 안내</div>
+              <div class="ann-body">
+                · <strong>구약통독 2팀</strong>: 목장 모임 후<br>
+                <span style="font-size:0.78rem; color:var(--gray);">&nbsp;&nbsp;성경통독을 통해 하나님을 깊이 만날 수 있도록
+                  기도해주세요</span><br><br>
+                · <strong>기도팀</strong>: 구약통독 2팀 모임 후<br>
+                <span style="font-size:0.78rem; color:var(--gray);">&nbsp;&nbsp;섬김이: 고준호 형제 / 팀원: 권지윤, 박주은, 정수현 자매<br>
+                  &nbsp;&nbsp;기도로 청년부를 섬기고 주님과 깊은 기도의 시간을 가지는 팀이 되도록 기도해주세요</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 목장 나눔 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon"><svg viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+            </svg></div>
+          <div class="card-title">목장 나눔</div>
+        </div>
+        <div class="card-body">
+          <div class="ann" style="padding-top:0;">
+            <div class="ann-num">1</div>
+            <div>
+              <div class="ann-title">순종과 감사의 고백</div>
+              <div class="ann-body">최근 내 삶에서 이해되지 않지만 말씀에 의지해 "하루의 순종"을 결단했던 적이 있나요? 또한 아홉 명처럼 당연하게 여기며 지나쳤던 일들 중 오늘 새롭게
+                발견한 "단 하루의 감사" 제목은 무엇인가요?</div>
+            </div>
+          </div>
+          <div class="ann">
+            <div class="ann-num">2</div>
+            <div>
+              <div class="ann-title">사랑과 전도의 실천</div>
+              <div class="ann-body">예수님은 돌아온 한 사람에게 "나머지 아홉은 어디 있느냐?"라고 물으셨습니다. 내 주변에 주님의 사랑과 기적의 간증을 나누어야 할 잃어버린 영혼은
+                누구인가요? 그들에게 이번 주에 전할 수 있는 나의 작은 '사랑의 나눔'은 무엇일지 이야기해 봅시다.</div>
+            </div>
+          </div>
+          <div class="ann">
+            <div class="ann-num">3</div>
+            <div>
+              <div class="ann-body">오늘 설교를 듣고 함께 식사하며 대화하고 싶은 대상이 떠오른다면 나누어주세요.</div>
+            </div>
+          </div>
+          <div class="ann">
+            <div class="ann-num">4</div>
+            <div>
+              <div class="ann-title">파악해주세요 📋</div>
+              <div class="ann-body">
+                · <strong>5/9(토) 오후 2시</strong> — 마더스 데이 꽃송이 포장 참여 여부<br>
+                · <strong>5/10(주일) 1부</strong> (오전 8:30~) — 꽃송이 전달 봉사 가능 여부<br>
+                · <strong>5/10(주일) 2부</strong> (오전 10:30~) — 꽃송이 전달 봉사 가능 여부
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon"><svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="12" />
+              <line x1="12" y1="16" x2="12.01" y2="16" />
+            </svg></div>
+          <div class="card-title">정보</div>
+        </div>
+        <div class="card-body">
+          <div class="contact-row">
+            <span class="contact-icon">⛪</span>
+            <span class="contact-label">장소</span>
+            <span class="contact-val">KM 청년부실</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-icon">🕐</span>
+            <span class="contact-label">예배</span>
+            <span class="contact-val">매주 주일 1:30 PM</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-icon">✝</span>
+            <span class="contact-label">목사</span>
+            <span class="contact-val">신성은 목사</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-icon">📷</span>
+            <span class="contact-label">Insta</span>
+            <span class="contact-val"><a href="https://www.instagram.com/hebronkmya/"
+                target="_blank">@hebronkmya</a></span>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <strong>Hebron KM Young Adults · 헤브론 청년부</strong>
+    KM 청년부실 &nbsp;·&nbsp; 매주 주일 1:30 PM &nbsp;·&nbsp; 신성은 목사<br>
+    hebronchurch2020@gmail.com &nbsp;·&nbsp; <a href="https://www.instagram.com/hebronkmya/"
+      target="_blank">@hebronkmya</a>
+  </footer>
+
+</body>
+
+</html>
