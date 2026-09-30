@@ -35,20 +35,19 @@
 
 ## 페이지 구조
 ```
-<header class="hero">       # 상단 배너: 날짜, 장소, 목사 (우측 정렬 info-chip)
-<div class="theme-bar">     # 청년부 연간 주제 바 (파란색)
-<div class="main-wrapper">  # 2컬럼 그리드 (main 1fr + aside 310px)
+<header class="hero">       # 흰 배경: 날짜(회색) + 제목 + .theme-bar(연간 주제 한 줄)
+<div class="main-wrapper">  # 한 컬럼 (최대 600px, 모바일 우선) — 정보 카드는 맨 아래
   <main>
     .card — 예배 순서       # 예배 순서 + 헌금 안내 (카드 맨 아래)
     .card — 청년부 소식     # 광고/공지
     .recruit-card           # 특별 모집 광고 (어두운 배경, 필요시만)
     .card — 목장 나눔       # 나눔 질문 (항상 메인 컬럼에, 사이드바 아님)
   </main>
-  <aside class="sidebar">
+  <aside class="sidebar">    # 한 컬럼이라 메인 아래에 이어짐
     .card — 정보            # 장소, 예배시간, 목사, 인스타 (이메일 없음)
   </aside>
 </div>
-<footer>                    # 교회 기본 정보
+<footer>                    # 한 줄만: Hebron KM Young Adults · 헤브론KM 청년부
 ```
 
 ---
@@ -67,7 +66,7 @@
 ```
 
 - 정보 사이드바에는 이메일 항목 없음
-- footer에는 plain text로만
+- footer에는 이메일 없음 (한 줄 이름만)
 
 ---
 
@@ -79,6 +78,9 @@
 - 정보 사이드바의 이메일 항목
 - 정보 사이드바의 주보 링크 항목
 - 헤더 가운데 십자가 엠블럼
+- 헤더의 info-chip (예배 시간 / 장소 / 목사)
+- 헤더의 그라데이션 배너, "주보" 알약, 장식 원
+- 카드 제목 옆 아이콘 박스 (.card-icon)
 
 ---
 
@@ -91,22 +93,29 @@
 
 ---
 
-## CSS 핵심 변수
+## 디자인 (2026-09 리디자인: 깔끔 + 살짝 발랄)
+- 주로 **모바일**로 봄 → 모바일 우선, 한 컬럼 (최대 600px)
+- 연회색 배경 위 흰색 둥근 카드 (radius 24px, 그림자 없음)
+- 헤더: 연한 파란 배경 + 날짜 알약 + "헤브론 청년부 👋" + 흰색 주제 박스
+- 카드 제목 앞 아이콘: 남색 선 SVG (`.title-ico`) — 십자가(예배 순서) / 확성기(청년부 소식) / 말풍선(목장 나눔) / 위치 핀(정보). 이모지 사용 안 함
+- 번호는 남색 동그라미, `<strong>`은 노란 형광펜
+- 포인트 색은 남색(`--accent`) 하나 — 그라데이션·장식 원 금지
+
 ```css
---cream: #FAF7F2
---warm-white: #FFFDF9
---gold: #C9A96E
---gold-light: #E8D5B0
---deep: #1C2B3A
---accent: #4A7FA5
---light-gray: #E8E2D9
---gray: #888
+--ink: #191F28     /* 제목 */
+--body: #4E5968    /* 본문 */
+--gray: #8B95A1    /* 보조 텍스트 */
+--gap: #F2F4F6     /* 페이지 배경 */
+--soft: #F9FAFB    /* 헌금 박스 배경 */
+--accent: #3451B2  /* 포인트 남색 */
+--navy: #1B2559    /* 이메일 헌금 박스, recruit-card 배경 */
+--tint: #EDF2FF    /* 헤더, 설교 행, 묵상 칸 */
+--marker: #FFEC99  /* 형광펜 */
 ```
 
 ## 폰트
-- Playfair Display — 제목, 숫자 장식
-- Noto Serif KR — 소제목, 설교 정보, 인용
-- Noto Sans KR — 본문
+- Pretendard Variable (jsdelivr CDN) 하나만 사용
+- 파일 구성: `index.html` + `style.css` (Netlify에는 두 파일 + 이미지 함께 배포)
 
 ---
 
@@ -119,7 +128,7 @@
 05  찬양 — [설교 후 찬양]
 06  축도 — [설교자]
 07  광고 — 임원
-    └── 헌금 안내 박스 (카드 내부 하단)
+    └── 헌금 안내 박스 (카드 내부 하단, <details>로 기본 접힘 — 눌러서 펼침)
 ```
 
 ---
