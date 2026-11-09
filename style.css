@@ -277,14 +277,14 @@ footer {
 
 .qt-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 4px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
   margin-top: 12px;
 }
 
 .qt-day {
   background: var(--tint);
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 10px 2px;
   text-align: center;
 }
@@ -293,13 +293,14 @@ footer {
   font-size: 12px;
   font-weight: 700;
   color: var(--accent);
+  white-space: nowrap;
 }
 
 .qt-ref {
-  font-size: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 2px;
   white-space: nowrap;
-  font-weight: 600;
-  line-height: 1.4;
 }
 
 /* 이벤트 하이라이트 박스 */
